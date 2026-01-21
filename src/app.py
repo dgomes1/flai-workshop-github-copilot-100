@@ -25,55 +25,64 @@ activities = {
         "description": "Join the school soccer team and compete in inter-school matches",
         "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
         "max_participants": 25,
-        "participants": ["alex@mergington.edu", "sarah@mergington.edu"]
+        "participants": ["alex@mergington.edu", "sarah@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=250&fit=crop"
     },
     "Swimming Club": {
         "description": "Improve your swimming technique and participate in competitions",
         "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
         "max_participants": 20,
-        "participants": ["lucas@mergington.edu", "mia@mergington.edu"]
+        "participants": ["lucas@mergington.edu", "mia@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=250&fit=crop"
     },
     "Drama Club": {
         "description": "Participate in theatrical productions and develop acting skills",
         "schedule": "Wednesdays, 3:30 PM - 5:30 PM",
         "max_participants": 15,
-        "participants": ["isabella@mergington.edu", "ethan@mergington.edu"]
+        "participants": ["isabella@mergington.edu", "ethan@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1503095396549-807759245b35?w=400&h=250&fit=crop"
     },
     "Art Studio": {
         "description": "Explore painting, drawing, and various artistic mediums",
         "schedule": "Thursdays, 3:30 PM - 5:00 PM",
         "max_participants": 18,
-        "participants": ["ava@mergington.edu", "noah@mergington.edu"]
+        "participants": ["ava@mergington.edu", "noah@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=250&fit=crop"
     },
     "Debate Team": {
         "description": "Develop critical thinking and public speaking through competitive debates",
         "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
         "max_participants": 16,
-        "participants": ["william@mergington.edu", "charlotte@mergington.edu"]
+        "participants": ["william@mergington.edu", "charlotte@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=250&fit=crop"
     },
     "Science Club": {
         "description": "Conduct experiments and explore scientific concepts beyond the classroom",
         "schedule": "Wednesdays, 3:30 PM - 4:30 PM",
         "max_participants": 15,
-        "participants": ["james@mergington.edu", "amelia@mergington.edu"]
+        "participants": ["james@mergington.edu", "amelia@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop"
     },
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
         "max_participants": 12,
-        "participants": ["michael@mergington.edu", "daniel@mergington.edu"]
+        "participants": ["michael@mergington.edu", "daniel@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=400&h=250&fit=crop"
     },
     "Programming Class": {
         "description": "Learn programming fundamentals and build software projects",
         "schedule": "Tuesdays and Thursdays, 3:30 PM - 4:30 PM",
         "max_participants": 20,
-        "participants": ["emma@mergington.edu", "sophia@mergington.edu"]
+        "participants": ["emma@mergington.edu", "sophia@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop"
     },
     "Gym Class": {
         "description": "Physical education and sports activities",
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
-        "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+        "participants": ["john@mergington.edu", "olivia@mergington.edu"],
+        "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=250&fit=crop"
     }
 }
 

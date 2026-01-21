@@ -3,6 +3,80 @@ document.addEventListener("DOMContentLoaded", () => {
   const activitySelect = document.getElementById("activity");
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
+  const carouselTrack = document.getElementById("carousel-track");
+  const carouselDots = document.getElementById("carousel-dots");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+  
+  let currentSlide = 0;
+  let activityImages = [];
+  let carouselInterval;
+
+  // Initialize carousel
+  function initCarousel(images) {
+    activityImages = images;
+    carouselTrack.innerHTML = "";
+    carouselDots.innerHTML = "";
+    
+    images.forEach((img, index) => {
+      // Create slide
+      const slide = document.createElement("div");
+      slide.className = "carousel-slide";
+      slide.innerHTML = `<img src="${img.url}" alt="${img.name}">`;
+      carouselTrack.appendChild(slide);
+      
+      // Create dot
+      const dot = document.createElement("span");
+      dot.className = "carousel-dot";
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(index));
+      carouselDots.appendChild(dot);
+    });
+    
+    startAutoSlide();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    const offset = -currentSlide * 100;
+    carouselTrack.style.transform = `translateX(${offset}%)`;
+    
+    // Update dots
+    document.querySelectorAll(".carousel-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentSlide);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % activityImages.length;
+    goToSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + activityImages.length) % activityImages.length;
+    goToSlide(currentSlide);
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide();
+    carouselInterval = setInterval(nextSlide, 3000);
+  }
+
+  function stopAutoSlide() {
+    if (carouselInterval) {
+      clearInterval(carouselInterval);
+    }
+  }
+
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    startAutoSlide();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    startAutoSlide();
+  });
 
   // Function to fetch activities from API
   async function fetchActivities() {
@@ -12,6 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Clear loading message
       activitiesList.innerHTML = "";
+      
+      // Collect images for carousel
+      const images = Object.entries(activities).map(([name, details]) => ({
+        name,
+        url: details.image
+      }));
+      
+      initCarousel(images);
 
       // Populate activities list
       Object.entries(activities).forEach(([name, details]) => {
@@ -31,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : `<p class="no-participants">No participants yet. Be the first to sign up!</p>`;
 
         activityCard.innerHTML = `
+          <img src="${details.image}" alt="${name}" class="activity-image">
           <h4>${name}</h4>
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
